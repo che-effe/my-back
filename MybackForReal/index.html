@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+		<head>
+			<title>myBack</title>
+			<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=2, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link rel="apple-touch-startup-image" href="myBack_intro.png">
+		<link rel="apple-touch-icon" href="myBack_logo.png" />
+		<link rel="stylesheet" href="myBack.css" type="text/caa" media="screen">
+		<script type="text/javascript" src="raphael.js"></script>	
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		
+
+		</head>
+	<body>
+	
+	<div class="main">
+		<h2>Device Motion</h2>
+		<table>
+			<tr>
+	    		<td>Event Supported</td><td id="dmEvent"></td>
+	    	</tr>
+			<tr>
+				<td>accelerationIncludingGravity</td><td id="moAccel"></td>
+			</tr>
+			<tr>
+				<td>Calculated Left-Right Tilt</td><td> <input type="text" id="moCalcTiltLR"/></td>
+			</tr>
+			<tr>
+				<td>Bad %</td><td><input type="text" id="BadPercent"></td>
+			</tr>
+			
+		</table>
+	</div>
+	<div id="LoadScreen" class="up">
+		<img src="myBack_intro.png" >
+	</div>
+	<div id="coach" style="-webkit-perspective: 1000; perspective: 1000;">
+		<img src="coachBall.png" id="coachBall" class="coach">
+	</div>
+	<div id="viewport" >
+	
+			
+		
+			
+		
+			<div id="BG">
+			</div>
+			
+			<div id="log">
+			</div>
+			
+	
+			<div id="threshold">
+			</div>
+			<div id="hidden_audio" style="display:none;">
+			<audio id="player" style="display:none;" src="fail-buzzer-02.wav" type="audio/wav" preload="auto" controls="" ></audio>
+			</div>
+			<div id="tutorial" class="appear"  align="center">
+			
+			
+			
+			<p><button id="skipBtn">Skip</button></p>
+			</div>
+		</div>	
+
+          
+            <div id="nav">
+			
+				<div >
+				<button id="chartBtn"></button>
+				</div>
+			
+				<div >
+				<button id="coachBtn"></button>
+				</div>
+			
+				<div >
+				<button id="directionsBtn"></button>
+				</div>
+				
+			</div>
+
+
+      				<script src="jQmyBackUI.js"></script>
+      				<script src="orientation.js"></script>
+
+        
+		<!--Will need a div tag to house the application or maybe canvas-->
+		<!--div tag with girahpic representation of device orientation-->
+		<!--Will need inputs for -->
+
+	</body>
+</html>
