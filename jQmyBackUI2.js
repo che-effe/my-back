@@ -14,6 +14,13 @@
 	//canvasMovement();
 //start app when the DOM is fully loaded
 //create system variables
+//
+
+// enable vibration support
+navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+
+
+
 	var tutorial = document.getElementById("tutorial"),
 		coach = document.getElementById("coach"),
 		threshgo = document.getElementById("threshold"),
@@ -39,7 +46,11 @@
 		}
 
 		function playAudio(){
-			document.getElementById("player").play();
+			if (navigator.vibrate) {
+				navigator.vibrate(10000);
+			} else {
+				document.getElementById("player").play();
+			}
 		}
 
 jQuery(document).ready(function() {
