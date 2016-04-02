@@ -59,6 +59,7 @@ body {
 	position:fixed;
 	bottom:1000px;
 	left: 50%;
+	top: 50%;
 	margin-top:8px;
 	transform:translateX(-50%) translateY(-50%);
 	z-index:8;
