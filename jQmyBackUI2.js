@@ -128,6 +128,7 @@ jQuery(document).ready(function() {
 
 
 	}
+		setTimeout(enterCoach, 2200);
 
 		jQuery('#chartBtn').click(enterChart);
 		jQuery('#coachBtn').click(enterCoach);
