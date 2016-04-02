@@ -251,7 +251,7 @@ body {
 }
 
 #LoadScreen.up{
-	-webkit-animation: LoadScreen_up 6s ease-in-out 01;
+	-webkit-animation: LoadScreen_up 2s ease-in-out 01;
 	-webkit-animation-fill-mode:forwards
 }
 
