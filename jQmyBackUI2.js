@@ -19,39 +19,35 @@
 // enable vibration support
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
 
+var tutorial = document.getElementById("tutorial");
+var coach = document.getElementById("coach");
+var threshgo = document.getElementById("threshold");
+var chart = document.getElementById("log");
+var buzzer = document.getElementById("player");
+var chartBtn = document.getElementById("chartBtn");
+var coachBtn = document.getElementById("coachBtn");
+var directionsBtn = document.getElementById("directionsBtn");
+var skipBtn = document.getElementById("skipBtn");
+var appStartTime = 0;
+var goodPostureTime = 0;
+var badPostureTime = 0;
+var appTimePercentage = 0;
+var goodPosturePercentage = 0;
+var badPosturePercentage = 0;
+var badPostureBall=0;
+buzzer.load();
+buzzer.play();
 
 
-	var tutorial = document.getElementById("tutorial"),
-		coach = document.getElementById("coach"),
-		threshgo = document.getElementById("threshold"),
-		chart = document.getElementById("log"),
-		buzzer = document.getElementById("player"),
-		chartBtn = document.getElementById("chartBtn"),
-		coachBtn = document.getElementById("coachBtn"),
-		directionsBtn = document.getElementById("directionsBtn"),
-		skipBtn = document.getElementById("skipBtn"),
-		appStartTime = 0,
-		goodPostureTime = 0,
-		badPostureTime = 0,
-		appTimePercentage = 0,
-		goodPosturePercentage = 0,
-		badPosturePercentage = 0,
-		badPostureBall=0;
-	buzzer.play();
-//setTimeout("playAudio();",20000); //any call to playAudio will make the audio play after a click
 
 
-		document.onclick = function(){
-			document.getElementById("player").load();
-		}
-
-		function playAudio(){
-			if (navigator.vibrate) {
-				navigator.vibrate(10000);
-			} else {
-				document.getElementById("player").play();
-			}
-		}
+function playAudio(){
+	if (navigator.vibrate) {
+		navigator.vibrate(10000);
+	} else {
+		document.getElementById("player").play();
+	}
+}
 
 jQuery(document).ready(function() {
 	init2();
@@ -99,19 +95,9 @@ jQuery(document).ready(function() {
 		tiltLR + "deg)";
 		document.getElementById("coachBall").style.MozTransform = "rotate(" + tiltLR + "deg)";
 		document.getElementById("coachBall").style.transform = "rotate(" + tiltLR + "deg)";
-		 if (tiltLR > 20 || tiltLR < -20){
+		 if (tiltLR > 20 || tiltLR < -20) {
 			playAudio();
 			}
-
-
-
-
-
-
-
-
-
-
 		// Functions for the app
 		setInterval(startTimers, 500);
 		function startTimers() {
